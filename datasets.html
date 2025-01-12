@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Tracker Datasets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #003366;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .dataset-container {
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .dataset-container h2 {
+            color: #003366;
+        }
+
+        .dataset-container p {
+            margin: 10px 0;
+        }
+
+        .download-link {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .download-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 20px;
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Energy Tracker Datasets</h1>
+        <p>Explore and download the data sets powering our insights</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="visualizations.html">Visualizations</a>
+        <a href="datasets.html">Datasets</a>
+    </nav>
+    <main>
+        <section class="dataset-container">
+            <h2>Available Datasets</h2>
+            <p>Below are the datasets generated and used in this project:</p>
+            <ul>
+                <li>
+                    <p><strong>Full Energy Data:</strong> A comprehensive dataset containing all energy usage details.</p>
+                    <a class="download-link" href="energy_data_full.csv" download>Download Full Dataset</a>
+                </li>
+                <li>
+                    <p><strong>ML-Ready Energy Data:</strong> A cleaned dataset prepared for machine learning tasks.</p>
+                    <a class="download-link" href="ml_ready_energy_data.csv" download>Download ML-Ready Dataset</a>
+                </li>
+                <li>
+                    <p><strong>Visualizations:</strong> Pre-generated visualizations showcasing insights from the data.</p>
+                    <a class="download-link" href="energy_usage_by_dorm.png" download>Download Visualizations</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Energy Tracker Project. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
