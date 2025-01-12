@@ -4,6 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Energy Tracker Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #333;
+            text-align: center;
+        }
+        nav {
+            background-color: #004d99;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        .visualization-container {
+            margin: 20px auto;
+            max-width: 900px;
+        }
+        .visualization {
+            margin: 20px 0;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .description {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to the Energy Tracker Dashboard</h1>
@@ -13,5 +60,35 @@
         <a href="/visualizations">Visualizations</a>
     </nav>
     <p>This dashboard provides insights into energy usage trends across dorms at Bates College.</p>
+
+    <div class="visualization-container">
+        <div class="visualization">
+            <img src="/Users/pauladutwum/Documents/Myprojects/EnergyTracker/energy_usage_by_dorm_and_season.png" alt="Energy Usage by Dorm and Season">
+            <p class="description">
+                This chart highlights the average energy usage across dorms during different seasons. Winter and summer show higher usage due to heating and cooling demands.
+            </p>
+        </div>
+
+        <div class="visualization">
+            <img src="/Users/pauladutwum/Documents/Myprojects/EnergyTracker/energy_usage_by_hour_and_dorm.png" alt="Energy Usage by Hour and Dorm">
+            <p class="description">
+                This visualization demonstrates energy usage trends by hour for each dorm. Evening hours show peaks due to increased appliance usage.
+            </p>
+        </div>
+
+        <div class="visualization">
+            <img src="/Users/pauladutwum/Documents/Myprojects/EnergyTracker/energy_usage_by_dorm_and_appliance.png" alt="Energy Usage by Dorm and Appliance">
+            <p class="description">
+                This chart breaks down energy usage by appliances within each dorm. Appliances like heaters and air conditioners consume the most energy.
+            </p>
+        </div>
+
+        <div class="visualization">
+            <img src="/Users/pauladutwum/Documents/Myprojects/EnergyTracker/energy_usage_by_dorm.png" alt="Total Energy Usage by Dorm">
+            <p class="description">
+                This bar chart displays total energy consumption for each dorm over the simulation period. Some dorms have significantly higher usage due to occupancy or appliance density.
+            </p>
+        </div>
+    </div>
 </body>
 </html>
