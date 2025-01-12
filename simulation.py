@@ -2,6 +2,13 @@ import pandas as pd
 import numpy as np
 import random
 from datetime import datetime, timedelta
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+from flask import Flask, render_template, jsonify
+
 
 # Dorms and Appliances
 dorms = ["Smith Hall", "Adams Hall", "Chu Hall", "Kaplanis Hall",
@@ -15,7 +22,7 @@ weather_impact = {"Winter": 1.3, "Spring": 1.0, "Summer": 1.5, "Fall": 1.1}
 
 # Generate Timestamp Data (Hourly for 5 Years)
 start_date = datetime(2018, 1, 1)
-end_date = datetime(2023, 1, 1)
+end_date = datetime(2024, 1, 1)
 timestamps = [start_date + timedelta(hours=i) for i in range((end_date - start_date).days * 24)]
 
 # Add holidays for simulation
@@ -55,6 +62,7 @@ print("Simulated data saved to 'energy_data_full.csv'")
 df['Hour'] = df['Timestamp'].dt.hour
 df['Month'] = df['Timestamp'].dt.month
 df['DayOfWeek'] = df['Timestamp'].dt.weekday
+df['Year'] = df['Timestamp'].dt.year
 ml_ready_df = df[["Dorm", "Appliance", "Season", "Hour", "Month", "DayOfWeek", "Usage (kWh)"]]
 
 # Save ML-Ready Dataset
@@ -62,10 +70,21 @@ ml_ready_df.to_csv("ml_ready_energy_data.csv", index=False)
 print("ML-ready data saved to 'ml_ready_energy_data.csv'")
 
 # Visualizing Trends and Patterns
+sns.set(style="whitegrid")
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Energy Usage by Dorms
+plt.figure(figsize=(12, 6))
+sns.barplot(data=df.groupby(["Dorm", "Season"])["Usage (kWh)"].mean().reset_index(),
+            x="Dorm", y="Usage (kWh)", hue="Season", palette="muted")
+plt.title("Average Energy Usage by Dorm and Season")
+plt.ylabel("Average Usage (kWh)")
+plt.xlabel("Dorms")
+plt.legend(title="Season")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig("energy_usage_by_dorm_and_season.png")
 plt.figure(figsize=(12, 6))
 sns.barplot(data=df.groupby("Dorm")["Usage (kWh)"].sum().reset_index(), x="Dorm", y="Usage (kWh)", palette="viridis")
 plt.title("Total Energy Usage by Dorm")
@@ -85,6 +104,45 @@ plt.xlabel("Date")
 plt.tight_layout()
 plt.savefig("energy_usage_over_time.png")
 print("Visualization saved as 'energy_usage_over_time.png'")
+#Enegy Usage by dorm and hours
+plt.figure(figsize=(12, 6))
+sns.lineplot(data=df.groupby(["Hour", "Dorm"])["Usage (kWh)"].mean().reset_index(),
+             x="Hour", y="Usage (kWh)", hue="Dorm", palette="tab10")
+plt.title("Average Energy Usage by Hour and Dorm")
+plt.ylabel("Average Usage (kWh)")
+plt.xlabel("Hour of the Day")
+plt.legend(title="Dorm")
+plt.tight_layout()
+plt.savefig("energy_usage_by_hour_and_dorm.png")
+
+#Energy Usage by Dorm and Year
+
+plt.figure(figsize=(12, 6))
+sns.barplot(data=df.groupby(["Year", "Dorm"])["Usage (kWh)"].sum().reset_index(),
+            x="Year", y="Usage (kWh)", hue="Dorm", palette="Set2")
+plt.title("Total Energy Usage by Dorm and Year")
+plt.ylabel("Total Usage (kWh)")
+plt.xlabel("Year")
+plt.legend(title="Dorm")
+plt.tight_layout()
+plt.savefig("energy_usage_by_year_and_dorm.png")
+
+# Energy Usage by Dorm and Appliance
+plt.figure(figsize=(12, 6))
+sns.barplot(data=df.groupby(["Dorm", "Appliance"])["Usage (kWh)"].mean().reset_index(),
+            x="Dorm", y="Usage (kWh)", hue="Appliance", palette="coolwarm")
+plt.title("Average Energy Usage by Dorm and Appliance")
+plt.ylabel("Average Usage (kWh)")
+plt.xlabel("Dorm")
+plt.legend(title="Appliance", bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig("energy_usage_by_dorm_and_appliance.png")
+
+print("Visualizations saved successfully!")
+
+
+
 
 # Machine Learning Example with Regression
 from sklearn.model_selection import train_test_split
@@ -117,12 +175,15 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Welcome to the Energy Tracker Dashboard!"
-
-@app.route("/usage-summary", methods=["GET"])
-def usage_summary():
-    summary = df.groupby("Dorm")["Usage (kWh)"].sum().to_dict()
-    return jsonify(summary)
+    return render_template("index.html")
+@app.route("/visualizations")
+def visualizations():
+    return jsonify({
+        "Energy Usage by Dorm and Season": "energy_usage_by_dorm_and_season.png",
+        "Energy Usage by Hour and Dorm": "energy_usage_by_hour_and_dorm.png",
+        "Energy Usage by Dorm and Year": "energy_usage_by_year_and_dorm.png",
+        "Energy Usage by Dorm and Appliance": "energy_usage_by_dorm_and_appliance.png"
+    })
 
 if __name__ == "__main__":
     app.run(debug=True)
