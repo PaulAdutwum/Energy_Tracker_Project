@@ -139,6 +139,42 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.savefig("energy_usage_by_dorm_and_appliance.png")
 
+# 1. Highest Appliance Usage Per Dorm
+plt.figure(figsize=(12, 6))
+appliance_usage = df.groupby(['Dorm', 'Appliance'])['Usage (kWh)'].sum().reset_index()
+sns.barplot(data=appliance_usage, x='Dorm', y='Usage (kWh)', hue='Appliance', palette='muted')
+plt.title("Highest Appliance Usage by Dorm")
+plt.xlabel("Dorm")
+plt.ylabel("Total Energy Usage (kWh)")
+plt.legend(title="Appliance", loc='upper right')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig("highest_appliance_usage_by_dorm.png")
+plt.show()
+
+plt.figure(figsize=(12, 6))
+peak_usage = df.groupby(['Dorm', 'Hour'])['Usage (kWh)'].mean().reset_index()
+sns.lineplot(data=peak_usage, x='Hour', y='Usage (kWh)', hue='Dorm', palette='tab10')
+plt.title("Peak Usage Times by Dorm")
+plt.xlabel("Hour of Day")
+plt.ylabel("Average Energy Usage (kWh)")
+plt.legend(title="Dorm", loc='upper right')
+plt.tight_layout()
+plt.savefig("peak_usage_times_by_dorm.png")
+plt.show()
+
+# 3. Highest Energy Consumption Throughout the Year for Each Dorm
+plt.figure(figsize=(12, 6))
+annual_usage = df.groupby(['Dorm', 'Year'])['Usage (kWh)'].sum().reset_index()
+sns.barplot(data=annual_usage, x='Year', y='Usage (kWh)', hue='Dorm', palette='coolwarm')
+plt.title("Annual Energy Consumption by Dorm")
+plt.xlabel("Year")
+plt.ylabel("Total Energy Usage (kWh)")
+plt.legend(title="Dorm", loc='upper right')
+plt.tight_layout()
+plt.savefig("annual_energy_consumption_by_dorm.png")
+plt.show()
+
 print("Visualizations saved successfully!")
 
 
