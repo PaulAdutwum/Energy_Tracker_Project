@@ -92,15 +92,40 @@
             <p>Below are the datasets generated and used in this project:</p>
             <ul>
                 <li>
-                    <p><strong>Full Energy Data:</strong> A comprehensive dataset containing all energy usage details.</p>
+                    <p><strong>Full Energy Data:</strong> This comprehensive dataset includes hourly energy usage data collected across all dorms at Bates College over a span of 5 years (2018–2024). The data captures detailed energy consumption patterns and includes the following columns:</p>
+                    <ul>
+                        <li><strong>Timestamp:</strong> The exact date and time when the energy usage was recorded.</li>
+                        <li><strong>Dorm:</strong> The dormitory where the energy usage occurred (e.g., Smith Hall, Adams Hall).</li>
+                        <li><strong>Appliance:</strong> The type of appliance consuming energy (e.g., Phones, Fridges, Laptops).</li>
+                        <li><strong>Season:</strong> The season during which the usage occurred (Winter, Spring, Summer, Fall).</li>
+                        <li><strong>Usage (kWh):</strong> The amount of energy consumed in kilowatt-hours.</li>
+                    </ul>
+                    <p>This dataset is ideal for exploring overall energy consumption trends and patterns.</p>
                     <a class="download-link" href="energy_data_full.csv" download>Download Full Dataset</a>
                 </li>
                 <li>
-                    <p><strong>ML-Ready Energy Data:</strong> A cleaned dataset prepared for machine learning tasks.</p>
+                    <p><strong>ML-Ready Energy Data:</strong> A cleaned and processed version of the dataset prepared for machine learning tasks. This dataset simplifies the data and includes the following columns:</p>
+                    <ul>
+                        <li><strong>Dorm:</strong> The dormitory where the energy usage occurred.</li>
+                        <li><strong>Appliance:</strong> The type of appliance consuming energy.</li>
+                        <li><strong>Season:</strong> The season during which the usage occurred.</li>
+                        <li><strong>Hour:</strong> The hour of the day when the energy was consumed (0–23).</li>
+                        <li><strong>Month:</strong> The month when the energy was consumed (1–12).</li>
+                        <li><strong>DayOfWeek:</strong> The day of the week when the energy was consumed (0 = Monday, 6 = Sunday).</li>
+                        <li><strong>Usage (kWh):</strong> The amount of energy consumed in kilowatt-hours.</li>
+                    </ul>
+                    <p>This dataset is designed for building machine learning models to predict energy consumption based on various factors.</p>
                     <a class="download-link" href="ml_ready_energy_data.csv" download>Download ML-Ready Dataset</a>
                 </li>
                 <li>
-                    <p><strong>Visualizations:</strong> Pre-generated visualizations showcasing insights from the data.</p>
+                    <p><strong>Visualizations:</strong> A set of pre-generated visualizations providing insights into energy consumption trends and patterns. The visualizations include:</p>
+                    <ul>
+                        <li><strong>Total Energy Usage by Dorm:</strong> A bar chart showing the total energy consumption for each dorm over the entire dataset.</li>
+                        <li><strong>Energy Usage Over Time:</strong> A line chart highlighting the energy usage trends across all dorms on a daily basis.</li>
+                        <li><strong>Appliance Usage by Dorm:</strong> A bar chart displaying the energy consumed by different appliances in each dorm.</li>
+                        <li><strong>Peak Usage Times by Dorm:</strong> A line chart showcasing the average energy usage at different times of the day for each dorm.</li>
+                    </ul>
+                    <p>These visualizations help identify key patterns and anomalies in energy usage.</p>
                     <a class="download-link" href="energy_usage_by_dorm.png" download>Download Visualizations</a>
                 </li>
             </ul>
