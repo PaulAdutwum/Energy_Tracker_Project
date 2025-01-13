@@ -60,20 +60,51 @@
     <nav>
         <a href="/">Home</a> |
         <a href="visualizations.html">Usage Summary</a> |
-        <a href="/visualizations">Visualizations</a>
-        <a href="datasets.html"></a>
+        <a href="/visualizations.html">Visualizations</a>
+        <a href="datasets.html"> Datasets</a>
     </nav>
     <main>
-        <h2>Welcome!</h2>
-        <p>This dashboard provides insights into energy consumption patterns across dorms at Bates College. Navigate through the links to view detailed usage summaries and interactive visualizations.</p>
-        <h3>Features:</h3>
+        <h2>Welcome to the Energy Tracker Dashboard!</h2>
+        <p>
+            This dashboard is designed to provide comprehensive insights into energy consumption patterns across dorms at Bates College. Using a combination of real-world inspired data and advanced analytics, this platform empowers users to explore, analyze, and understand how energy is utilized over time.
+        </p>
+        <h3>What the Data Represents:</h3>
+        <p>
+            The data encompasses hourly energy usage recorded over a five-year span (2018-2023) across various dormitories. Factors such as seasons, appliance types, hours of the day, and holidays have been simulated to reflect realistic usage trends. 
+            Additionally, anomalies and occasional spikes have been incorporated to simulate real-world unpredictability and to facilitate anomaly detection.
+        </p>
+        <h3>Machine Learning Integration:</h3>
+        <p>
+            A machine learning regression model is employed to predict energy consumption patterns. Here's how it works:
+        </p>
         <ul>
-            <li><strong>Usage Summary:</strong> View a dorm-wise breakdown of energy consumption.</li>
-            <li><strong>Visualizations:</strong> Explore interactive charts and graphs on energy usage trends.</li>
-            <li><strong>Machine Learning Insights:</strong> Predict and analyze energy usage patterns.</li>
+            <li>
+                <strong>Feature Extraction:</strong> The data is preprocessed to include meaningful attributes such as time of day, season, dorm, and appliance type.
+            </li>
+            <li>
+                <strong>Training and Testing:</strong> A portion of the data is used to train the model, while the rest is reserved for testing and validating its accuracy.
+            </li>
+            <li>
+                <strong>Insights and Predictions:</strong> The model identifies patterns and predicts energy usage for different dorms and time periods. These predictions can help identify potential overuse, optimize energy distribution, and suggest improvements for energy efficiency.
+            </li>
         </ul>
-        <p>Use the navigation bar above to explore the different features of this dashboard.</p>
+        <h3>Features of the Dashboard:</h3>
+        <ul>
+            <li>
+                <strong>Usage Summary:</strong> A dorm-wise breakdown of total energy consumption, highlighting which dorms consume the most energy.
+            </li>
+            <li>
+                <strong>Visualizations:</strong> Interactive charts and graphs that illustrate trends in energy usage across seasons, hours, and appliances.
+            </li>
+            <li>
+                <strong>Machine Learning Insights:</strong> Predictions and analyses derived from advanced algorithms to forecast energy consumption and identify unusual patterns.
+            </li>
+        </ul>
+        <p>
+            Navigate through the links in the navigation bar to explore the dashboard's features. Discover how technology and data-driven insights can transform energy management at Bates College!
+        </p>
     </main>
+        
     <footer>
         <p>&copy; 2024 Energy Tracker Dashboard. All rights reserved.</p>
     </footer>
