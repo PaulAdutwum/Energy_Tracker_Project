@@ -25,7 +25,7 @@ start_date = datetime(2018, 1, 1)
 end_date = datetime(2024, 1, 1)
 timestamps = [start_date + timedelta(hours=i) for i in range((end_date - start_date).days * 24)]
 
-# Add holidays for simulation
+
 holidays = [
     datetime(2023, 12, 25),   
     datetime(2023, 11, 23),  
@@ -45,7 +45,7 @@ for timestamp in timestamps:
     usage = round(base_usage * peak_factor * weather_factor * holiday_factor, 2)
     
     
-    if random.random() < 0.005:  # 0.5% chance of spike
+    if random.random() < 0.005:  
         usage *= 10
 
     data.append([timestamp, dorm, appliance, season, usage])
