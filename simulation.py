@@ -16,11 +16,11 @@ dorms = ["Smith Hall", "Adams Hall", "Chu Hall", "Kaplanis Hall",
 appliances = ["Phones", "Fridges", "Fans", "Cooking Wares", "Kettles",
               "Lamps", "Laptops", "Heaters", "Air Conditioners"]
 
-# Seasons and Weather Impacts
+
 seasons = ["Winter", "Spring", "Summer", "Fall"]
 weather_impact = {"Winter": 1.3, "Spring": 1.0, "Summer": 1.5, "Fall": 1.1}
 
-# Generate Timestamp Data (Hourly for 5 Years)
+
 start_date = datetime(2018, 1, 1)
 end_date = datetime(2024, 1, 1)
 timestamps = [start_date + timedelta(hours=i) for i in range((end_date - start_date).days * 24)]
@@ -32,7 +32,7 @@ holidays = [
     datetime(2023, 7, 4),    
 ]
 
-# Simulate Data
+
 data = []
 for timestamp in timestamps:
     dorm = random.choice(dorms)
