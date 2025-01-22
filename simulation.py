@@ -180,12 +180,12 @@ print("Visualizations saved successfully!")
 
 
 
-# Machine Learning Example with Regression
+# Machine Learnin
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 
-# Prepare Features and Target
+
 X = ml_ready_df[["Hour", "Month", "DayOfWeek"]]
 y = ml_ready_df["Usage (kWh)"]
 
