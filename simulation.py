@@ -27,9 +27,9 @@ timestamps = [start_date + timedelta(hours=i) for i in range((end_date - start_d
 
 # Add holidays for simulation
 holidays = [
-    datetime(2023, 12, 25),  # Christmas
-    datetime(2023, 11, 23),  # Thanksgiving
-    datetime(2023, 7, 4),    # Independence Day
+    datetime(2023, 12, 25),   
+    datetime(2023, 11, 23),  
+    datetime(2023, 7, 4),    
 ]
 
 # Simulate Data
@@ -44,7 +44,7 @@ for timestamp in timestamps:
     weather_factor = weather_impact[season]
     usage = round(base_usage * peak_factor * weather_factor * holiday_factor, 2)
     
-    # Add occasional spikes for anomaly detection
+    
     if random.random() < 0.005:  # 0.5% chance of spike
         usage *= 10
 
