@@ -35,7 +35,7 @@ This project simulates and tracks energy usage across different dorms at Bates C
   - Seaborn
 - Machine Learning
   - Linear Regression
-- **Future Technologies**
+- Future Technologies
   - Flask/Django (for web dashboard)
   - Hosting on AWS/Google Cloud/Heroku
 
