@@ -205,6 +205,7 @@ print(f"Mean Squared Error: {mse:.2f}")
 print(f"R^2 Score: {r2:.2f}")
 
 # Deployment with Flask
+
 from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
