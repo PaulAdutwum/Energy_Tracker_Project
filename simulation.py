@@ -21,6 +21,7 @@ seasons = ["Winter", "Spring", "Summer", "Fall"]
 weather_impact = {"Winter": 1.3, "Spring": 1.0, "Summer": 1.5, "Fall": 1.1}
 
 
+
 start_date = datetime(2018, 1, 1)
 end_date = datetime(2024, 1, 1)
 timestamps = [start_date + timedelta(hours=i) for i in range((end_date - start_date).days * 24)]
@@ -38,9 +39,9 @@ for timestamp in timestamps:
     dorm = random.choice(dorms)
     appliance = random.choice(appliances)
     season = seasons[(timestamp.month - 1) // 3]
-    peak_factor = 1.5 if 18 <= timestamp.hour <= 22 else 1.0  # Evening peak usage
+    peak_factor = 1.5 if 18 <= timestamp.hour <= 22 else 1.0  
     holiday_factor = 0.7 if timestamp.date() in [holiday.date() for holiday in holidays] else 1.0  # Reduced on holidays
-    base_usage = np.random.uniform(0.1, 2.0)  # Base usage in kWh
+    base_usage = np.random.uniform(0.1, 2.0)  
     weather_factor = weather_impact[season]
     usage = round(base_usage * peak_factor * weather_factor * holiday_factor, 2)
     
