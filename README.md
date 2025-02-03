@@ -22,12 +22,12 @@ This project simulates and tracks energy usage across different dorms at Bates C
 ## Files Included
 - `simulation.py`: Script for generating and analyzing energy data.
 -`energy_data_full.csv`: Simulated dataset for five years of energy usage.
-- `ml_ready_energy_data.csv`**: Preprocessed data for machine learning.
-- `energy_usage_by_dorm.png`**: Visualization of energy usage by dorm.
-- `energy_usage_over_time.png`**: Visualization of energy usage trends over time.
+- `ml_ready_energy_data.csv`: Preprocessed data for machine learning.
+- `energy_usage_by_dorm.png`: Visualization of energy usage by dorm.
+- `energy_usage_over_time.png`: Visualization of energy usage trends over time.
 
 ## Technologies Used
-- Python**
+- Python
   - pandas
   - NumPy
   - Matplotlib
