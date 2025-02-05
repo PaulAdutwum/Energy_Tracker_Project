@@ -3,10 +3,10 @@
 This project simulates and tracks energy usage across different dorms at Bates College, providing insights into energy consumption patterns and enabling predictive analysis using machine learning.
 
 ## Features
-- Simulated Energy Data**: Generates synthetic energy usage data for dormitories and appliances, considering seasonal variations, peak usage hours, and weather impacts.
-- Data Visualization**: Provides graphs and charts for energy usage trends by dorm and over time.
+- Simulated Energy Data: Generates synthetic energy usage data for dormitories and appliances, considering seasonal variations, peak usage hours, and weather impacts.
+- Data Visualization: Provides graphs and charts for energy usage trends by dorm and over time.
 - Machine Learning Integration**: Includes regression models for predicting energy consumption.
-- Web Dashboard (Future)**: Plans to develop a user-friendly dashboard using Flask or Django for visualization and insights.
+- Web Dashboard (Future): Plans to develop a user-friendly dashboard using Flask or Django for visualization and insights.
 
 ## Usage
 1. Install dependencies:
