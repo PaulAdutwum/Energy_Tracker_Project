@@ -11,7 +11,7 @@ This project tracks energy usage across different dorms at Bates College, provid
   ##Some of Key Visualizations
 
 ![Energy Tracker Screenshot](https://github.com/user-attachments/assets/e6c4f88c-2f46-4ed8-8fbb-22ce4c720571)
- ![Energy Tracker Screenshot](https://github.com/user-attachments/assets/e6c4f88c-2f46-4ed8-8fbb-22ce4c720571) 
+ ![Energy Tracker Screenshot](https://github.com/user-attachments/assets/bc8f4d4c-999b-4455-909b-ca94c906a8ed) 
 ![Energy Tracker Screenshot](https://github.com/user-attachments/assets/e6c4f88c-2f46-4ed8-8fbb-22ce4c720571)
 ## Technologies Used
 - Python
