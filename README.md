@@ -8,6 +8,10 @@ This project tracks energy usage across different dorms at Bates College, provid
 - Machine Learning Integration**: Includes regression models for predicting energy consumption.
 - Web Dashboard (Future): Plans to develop a user-friendly dashboard using Flask or Django for visualization and insights.
 
+  ##Some of Key Visualizations
+
+https://github.com/user-attachments/assets/e6c4f88c-2f46-4ed8-8fbb-22ce4c720571
+
   
 
 ## Technologies Used
