@@ -1,8 +1,8 @@
-# Energy Tracker Project
+Energy Tracker Project
 
 This project tracks energy usage across different dorms at Bates College, providing insights into energy consumption patterns and enabling predictive analysis using machine learning.
 
-## Features
+ Features
 -  Energy Data: Uses energy usage data for dormitories and appliances, considering seasonal variations, peak usage hours, and weather impacts.
 - Data Visualization: Provides graphs and charts for energy usage trends by dorm and over time.
 - Machine Learning Integration**: Includes regression models for predicting energy consumption.
